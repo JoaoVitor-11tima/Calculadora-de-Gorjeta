@@ -25,7 +25,6 @@ body {
 }
 
 header {
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     padding-block: 2.8rem;
@@ -51,7 +50,6 @@ main {
 }
 
 .conta div {
-    border: 1px solid red;
     margin-top: 0.4rem;
     background-color: var(--green-100);
     padding: 0.4rem 1.2rem;
@@ -84,7 +82,6 @@ main {
 }
 
 .gorjeta div {
-    border: 1px solid red;
     margin-top: 1rem;
 
     display: grid;
@@ -163,4 +160,23 @@ main {
     text-transform: uppercase;
     font-size: 1.25rem;
     padding-block: 0.5rem;
+}
+
+@media(min-width: 920px) {
+    main{
+        display: flex;
+        gap: 3rem;
+        padding: 3rem;
+        border-radius: 1.5625rem;
+        max-width: 57.5rem;
+        margin-inline: auto;
+    }
+
+    main section {
+        width: 100px;
+    }
+
+    .gorjeta div {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
