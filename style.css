@@ -16,6 +16,7 @@
     --green-800: #00474B;
     --light-green: #26C2AE;
     --white: #FFFFFF;
+    --green-hover: #9FE8DF;
 
 
 }
@@ -49,7 +50,8 @@ main {
     font-weight: 700;
 }
 
-.conta div {
+.conta div,
+.pessoas .input-box {
     margin-top: 0.4rem;
     background-color: var(--green-100);
     padding: 0.4rem 1.2rem;
@@ -77,8 +79,13 @@ main {
 }
 
 .conta:has(input:focus) div,
-.pessoas:has(input:focus) div {
+.conta:has(input:focus) div,
+.pessoas:has(input:focus) .input-box,
+.pessoas:has(input:focus) .input-box,
+.gorjeta #outra:focus,
+.gorjeta #outra:hover {
     outline: 2px solid var(--light-green);
+    cursor: pointer;
 }
 
 .gorjeta div {
@@ -101,6 +108,12 @@ main {
     color: var(--white);
 }
 
+.gorjeta input[type="button"]:hover,
+.resultados button:hover {
+    background-color: var(--green-hover);
+    cursor: pointer;
+}
+
 .gorjeta #outra {
     width: 100%;
     background-color: var(--green-100);
@@ -111,8 +124,12 @@ main {
     color: var(--green-300);
 }
 
+.pessoas .texto {
+    display: flex;
+}
+
 .pessoas #erro {
-    display: none;
+    font-size: 0.75rem;
 }
 
 .resultados {
@@ -121,7 +138,7 @@ main {
     padding: 1.5rem;
 }
 
-.resultados div {
+.resultados div div {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -139,7 +156,7 @@ main {
 
 .resultados div > strong {
     color: var(--light-green);
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 .resultados .gorjeta-total {
@@ -162,7 +179,25 @@ main {
     padding-block: 0.5rem;
 }
 
+.conta input::-webkit-inner-spin-button,
+.pessoas input::-webkit-inner-spin-button,
+.gorjeta #outra::-webkit-inner-spin-button {
+    display: none;
+}
+
 @media(min-width: 920px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100svh;
+        justify-content: center;
+        gap: 5rem;
+    }
+    
+    header {
+        padding: 0;
+    }
+
     main{
         display: flex;
         gap: 3rem;
@@ -179,4 +214,17 @@ main {
     .gorjeta div {
         grid-template-columns: 1fr 1fr 1fr;
     }
+
+    .resultados {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        padding: 2.5rem;
+    }
+
+    .resultados div > strong {
+        font-size: 3rem;
+    }
+    
 }
