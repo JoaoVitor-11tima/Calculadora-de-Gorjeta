@@ -17,6 +17,7 @@
     --light-green: #26C2AE;
     --white: #FFFFFF;
     --green-hover: #9FE8DF;
+    --danger: #E17457;
 
 
 }
@@ -108,6 +109,11 @@ main {
     color: var(--white);
 }
 
+.gorjeta .botao-ativo{
+    background-color: var(--light-green);
+    color: var(--green-800);
+}
+
 .gorjeta input[type="button"]:hover,
 .resultados button:hover {
     background-color: var(--green-hover);
@@ -126,10 +132,19 @@ main {
 
 .pessoas .texto {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pessoas #erro-div {
+    outline: 2px solid var(--danger);
 }
 
 .pessoas #erro {
     font-size: 0.75rem;
+    color: var(--danger);
+    font-weight: 700;
+    display: none;
 }
 
 .resultados {
@@ -208,7 +223,7 @@ main {
     }
 
     main section {
-        width: 100px;
+        flex: 1;
     }
 
     .gorjeta div {
